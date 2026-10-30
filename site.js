@@ -19,6 +19,18 @@
     }, 6000);
   }
 
+  const stacks = [...document.querySelectorAll('.stack')];
+  const setStick = () => {
+    const hh = document.querySelector('.header').offsetHeight;
+    stacks.forEach((el, i) => {
+      el.style.setProperty('--stick', `${Math.min(hh, window.innerHeight - el.offsetHeight)}px`);
+      el.style.zIndex = String(i + 1);
+    });
+  };
+  setStick();
+  window.addEventListener('resize', setStick);
+  if ('ResizeObserver' in window) { const ro = new ResizeObserver(setStick); stacks.forEach((el) => ro.observe(el)); }
+
   const btn = document.querySelector('.menu-btn');
   const drawer = document.querySelector('.drawer');
   if (btn && drawer) {
