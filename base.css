@@ -83,7 +83,8 @@ h1, h2, h3, p { margin: 0; font-weight: inherit; }
   color: var(--c-on-dark);
   transition: filter 0.3s var(--ease);
 }
-.hbtn__arw { display: grid; place-items: center; width: 26px; height: 18px; font-size: 12px; background: var(--c-on-dark); color: var(--c-sub); }
+.hbtn__arw { display: grid; place-items: center; width: 28px; aspect-ratio: 1; border-radius: 50%; background: var(--c-on-dark); color: var(--c-sub); transition: transform 0.3s var(--ease); }
+.hbtn__arw svg { width: 12px; }
 .hbtn--sub { background: var(--c-sub); }
 .hbtn--accent { background: var(--c-accent); color: var(--c-ink); }
 .hbtn--accent .hbtn__arw { background: var(--c-ink); color: var(--c-accent); }
@@ -110,6 +111,7 @@ h1, h2, h3, p { margin: 0; font-weight: inherit; }
 @media (hover: hover) {
   .gnav__list a:hover { color: var(--c-accent); }
   .hbtn:hover { filter: brightness(1.15); }
+  .hbtn:hover .hbtn__arw { transform: translateX(3px); }
 }
 
 .drawer {

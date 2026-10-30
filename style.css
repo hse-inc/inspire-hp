@@ -20,7 +20,7 @@
   line-height: 1;
   letter-spacing: -0.02em;
   color: var(--c-intro);
-  background: url("assets/fv_01.webp?v=20261030c") center / cover no-repeat;
+  background: url("assets/fv_01.webp?v=20261030e") center / cover no-repeat;
   -webkit-background-clip: text;
   background-clip: text;
   animation: intro-in 0.5s var(--ease) both;
@@ -88,7 +88,7 @@ html.is-ready .fv .wipe::after { animation: wipe-bar 0.9s var(--ease-wipe) var(-
 }
 @keyframes wipe-txt { 0%, 49% { color: transparent; } 50%, 100% { color: var(--c-on-dark); } }
 
-.marquee { overflow: hidden; pointer-events: none; }
+.marquee { overflow: hidden; pointer-events: none; line-height: 1; }
 .marquee__track {
   display: inline-block;
   font-family: var(--ff-en);
@@ -102,7 +102,9 @@ html.is-ready .fv .wipe::after { animation: wipe-bar 0.9s var(--ease-wipe) var(-
 @keyframes marquee { to { transform: translateX(-50%); } }
 .marquee--fv { position: absolute; inset: auto 0 -0.16em; z-index: 1; font-size: var(--fs-marquee); line-height: 1; color: var(--c-on-dark); }
 .marquee--fv .marquee__track { font-size: 1em; }
-.marquee--sub { height: calc(var(--fs-marquee) * 0.86); margin-top: var(--sp-s); color: var(--c-sub); }
+
+.marquee--sub { padding-block: var(--sp-b); font-size: var(--fs-marquee); background: var(--c-base); color: var(--c-sub); }
+.marquee--sub .marquee__track { font-size: 1em; }
 
 .svc { display: grid; gap: var(--sp-s); }
 .svc__block { display: grid; gap: var(--sp-b); }
@@ -229,7 +231,7 @@ html.is-ready .fv .wipe::after { animation: wipe-bar 0.9s var(--ease-wipe) var(-
   .split__img img { aspect-ratio: auto; }
 }
 
-.photo-sec { overflow: hidden; color: var(--c-on-dark); }
+.photo-sec { position: relative; overflow: hidden; color: var(--c-on-dark); }
 .photo-sec__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
 .photo-sec::after { content: ""; position: absolute; inset: 0; background: var(--c-shade-deep); }
 .photo-sec__in { position: relative; z-index: 1; display: grid; justify-items: start; padding-block: var(--sec-y); }
